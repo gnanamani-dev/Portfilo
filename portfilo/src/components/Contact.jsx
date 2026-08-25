@@ -62,7 +62,7 @@ export default function Contact() {
           {/* LEFT: direct contact links */}
           <div className="contact__direct">
             {/* TODO: replace with your real email/links */}
-            <a href="gnanamaniraja.r@gmail.com" className="contact__direct-link">
+            <a href="mailto:gnanamaniraja.r@gmail.com" className="contact__direct-link"   rel="noreferrer" target="_self">
               <MailIcon />
               <span>gnanamaniraja.r@gmail.com</span>
             </a>
