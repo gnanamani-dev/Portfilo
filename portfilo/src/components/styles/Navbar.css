@@ -1,0 +1,148 @@
+/* ===== Color variables (we'll reuse these across the whole site later) ===== */
+:root {
+  --bg: #0f1e1b;         /* deep forest-ink background */
+  --surface: #16241f;    /* card / navbar background */
+  --border: #25352f;     /* hairline borders */
+  --gold: #c9a24b;       /* accent color */
+  --gold-soft: #e4c878;
+  --teal: #3fa88a;       /* secondary accent */
+  --ivory: #f3efe3;      /* main text color */
+  --muted: #94a39c;      /* secondary text color */
+}
+
+/* ===== Navbar container ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+/* When the user scrolls down, add a blurred glass background */
+.navbar--scrolled {
+  background: rgba(15, 30, 27, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== Logo ===== */
+.navbar__logo {
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ivory);
+  letter-spacing: 0.5px;
+}
+
+.navbar__logo-dot {
+  color: var(--gold);
+}
+
+/* ===== Desktop nav links ===== */
+.navbar__links {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar__link {
+  position: relative;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* Animated underline on hover */
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ivory);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ===== CTA button ===== */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar__cta:hover {
+  transform: translateY(-3px);
+  background: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 12px 30px -8px rgba(201, 162, 75, 0.45);
+}
+
+/* ===== Mobile toggle button (hidden on desktop) ===== */
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ivory);
+  cursor: pointer;
+}
+
+.navbar__mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 24px 24px;
+}
+
+.navbar__mobile-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* ===== Responsive: below 768px, switch to mobile menu ===== */
+@media (max-width: 768px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__mobile-menu {
+    display: flex;
+  }
+}
