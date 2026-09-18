@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./styles/Hero.css";
 import profilePhoto from "../assets/profile.png";
 
@@ -68,9 +68,22 @@ function useTypingEffect(text, speed = 80, startDelay = 500) {
 
 export default function Hero() {
   const { display: typedName, done: nameDone } = useTypingEffect("Gnanamani R", 80, 600);
+  const heroRef = useRef(null);
+
+  /* Scrolls to whatever section comes right after the hero,
+     so it stays correct even if sections get reordered later */
+  const scrollToNext = () => {
+    const nextSection = heroRef.current?.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback: scroll one viewport down
+      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" ref={heroRef}>
       <div className="hero__inner">
         {/* LEFT: intro text */}
         <div className="hero__text">
@@ -96,9 +109,15 @@ export default function Hero() {
             </a>
 
             <div className="hero__socials">
-              <a href="https://github.com/gnanamani-dev" className="hero__icon-btn" aria-label="GitHub"><GithubIcon /></a>
-              <a href="https://www.linkedin.com/in/gnanamani-r-0836a5318/" className="hero__icon-btn" aria-label="LinkedIn"><LinkedinIcon /></a>
-              <a href="gnanamaniraja.r@gmail.com" className="hero__icon-btn" aria-label="Email"><MailIcon /></a>
+              <a href="https://github.com/gnanamani-dev" className="hero__icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <GithubIcon />
+              </a>
+              <a href="https://www.linkedin.com/in/gnanamani-r-0836a5318/" className="hero__icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <LinkedinIcon />
+              </a>
+              <a href="mailto:gnanamaniraja.r@gmail.com" className="hero__icon-btn" aria-label="Email">
+                <MailIcon />
+              </a>
             </div>
           </div>
         </div>
@@ -115,7 +134,7 @@ export default function Hero() {
 
             <div className="hero__terminal-body">
               <div className="hero__line">
-                <span className="hero__prompt">➜</span> ~ whoami
+                <span className="hero__prompt">➜</span> ~ who am i
               </div>
               <div className="hero__output hero__output--name">
                 {typedName}
@@ -151,8 +170,8 @@ export default function Hero() {
       </div>
 
       {/* scroll hint */}
-      <div className="hero__scroll">
-        <span>SCROLL</span>
+      <div className="hero__scroll" onClick={scrollToNext} role="button" tabIndex={0}>
+        <span>SCROLL DOWN</span>
         <div className="hero__scroll-line" />
       </div>
     </section>

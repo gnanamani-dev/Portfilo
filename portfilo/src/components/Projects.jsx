@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles/Projects.css";
+import project1Image from "../assets/project1.png";
+import project2Image from "../assets/project2.png"
 
 /* TODO: replace with your real projects.
    Add or remove objects from this array — the grid adjusts automatically. */
@@ -9,18 +11,16 @@ const PROJECTS = [
     description: "A full-stack web app to manage student records, built with a React + Tailwind CSS frontend and a Django + MySQL backend handling authentication and data.",
     tech: ["React", "Tailwind CSS", "Django", "MySQL"],
     liveUrl: "https://my-fullstack-project-dh0nf45qf-gnanamani-devs-projects.vercel.app/",
-    // TODO: add your GitHub repo link here once pushed, e.g. "https://github.com/yourusername/student-management"
-    githubUrl: "https://github.com/gnanamani-dev/my-fullstack-project",
-    // TODO: put a screenshot at src/assets/project1.png, import it above, and set it here
-    image: null,
+    githubUrl: "https://github.com/gnanamani-dev/-my-fullstack-project",
+    image: project1Image,
   },
   {
     title: "Project Two",
     description: "A short 1-2 line description of what this project does and the problem it solves.",
-    tech: ["React", "JavaScript"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: null,
+    tech: ["Html","Css", "JavaScript"],
+    liveUrl: "https://home-grocery-project-eivbwp908-gnanamani-devs-projects.vercel.app/",
+    githubUrl: "https://github.com/gnanamani-dev/Home-Grocery-project",
+    image:project2Image,
   },
   {
     title: "Project Three",
@@ -86,10 +86,20 @@ export default function Projects() {
                 </div>
 
                 <div className="projects__links">
-                  <a href={project.liveUrl} className="projects__link">
+                  <a
+                    href={project.liveUrl}
+                    className="projects__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ExternalLinkIcon /> Live
                   </a>
-                  <a href={project.githubUrl} className="projects__link">
+                  <a
+                    href={project.githubUrl}
+                    className="projects__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <GithubIcon /> Code
                   </a>
                 </div>

@@ -254,6 +254,20 @@
   align-items: center;
   gap: 8px;
   animation: floatSlow 2.4s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.hero__scroll:hover {
+  opacity: 0.8;
+}
+
+/* Visible outline when tabbing to it via keyboard (role="button" + tabIndex in JS) */
+.hero__scroll:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 6px;
 }
 
 .hero__scroll span {
