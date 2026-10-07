@@ -16,7 +16,7 @@ const PROJECTS = [
     image: project1Image,
   },
   {
-    title: "Project Two",
+    title: "Home Grocery",
     description: "A responsive grocery shopping website built with HTML ,CSS and Boostrap featuring a clean UI, product browsing, responsive design, and interactive elements",
     tech: ["Html","Css", "JavaScript"],
     liveUrl: "https://home-grocery-project-eivbwp908-gnanamani-devs-projects.vercel.app/",
