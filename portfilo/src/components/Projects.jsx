@@ -12,7 +12,7 @@ const PROJECTS = [
       "A full-stack web app to manage student records, built with a React + Tailwind CSS frontend and a Django + MySQL backend handling authentication and data.",
     tech: ["React", "Tailwind CSS", "Django", "MySQL"],
     liveUrl:
-      "https://my-fullstack-project-dh0nf45qf-gnanamani-devs-projects.vercel.app/",
+      "https://my-fullstack-project-jade.vercel.app/",
     githubUrl:
       "https://github.com/gnanamani-dev/-my-fullstack-project",
     image: project1Image,
