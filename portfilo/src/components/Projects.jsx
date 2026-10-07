@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/Projects.css";
 import project1Image from "../assets/project1.png";
-import project2Image from "../assets/project2.png"
+import project2Image from "../assets/project2.png";
+import project3Image from "../assets/Weather.png"
 
 /* TODO: replace with your real projects.
    Add or remove objects from this array — the grid adjusts automatically. */
@@ -16,19 +17,21 @@ const PROJECTS = [
   },
   {
     title: "Project Two",
-    description: "A short 1-2 line description of what this project does and the problem it solves.",
+    description: "A responsive grocery shopping website built with HTML ,CSS and Boostrap featuring a clean UI, product browsing, responsive design, and interactive elements",
     tech: ["Html","Css", "JavaScript"],
     liveUrl: "https://home-grocery-project-eivbwp908-gnanamani-devs-projects.vercel.app/",
     githubUrl: "https://github.com/gnanamani-dev/Home-Grocery-project",
     image:project2Image,
   },
-  {
-    title: "Project Three",
-    description: "A short 1-2 line description of what this project does and the problem it solves.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: null,
+    {
+    title: "Weather App",
+    description:
+      "A responsive weather application built with React.js that fetches real-time weather data using the OpenWeatherMap API. It includes city search, dynamic weather icons, temperature, humidity, wind speed, country details, error handling, and a smooth responsive UI.",
+    tech: ["React", "JavaScript", "CSS3", "OpenWeatherMap API","Tailwand CSS"],
+    liveUrl:
+      "https://weather-pqc7apcay-gnanamani-devs-projects.vercel.app/",
+    githubUrl: "https://github.com/gnanamani-dev/Weather-App",
+    image:project3Image,
   },
 ];
 
